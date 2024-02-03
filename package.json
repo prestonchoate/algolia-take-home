@@ -1,0 +1,23 @@
+{
+  "name": "algolia-take-home",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsc && node ./build/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/lodash": "^4.14.202",
+    "@types/node": "^20.11.13",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "algoliasearch": "^4.22.1",
+    "dotenv": "^16.4.1",
+    "lodash": "^4.17.21"
+  }
+}
