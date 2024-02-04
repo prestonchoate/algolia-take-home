@@ -1,9 +1,25 @@
 {
   // These tasks will run in order when initializing your CodeSandbox project.
   "setupTasks": [
+    {
+      "command": "cd ui && npm install",
+      "name": "Install UI Dependencies"
+    },
+    {
+      "command": "cd data-ingestion && npm install",
+      "name": "Install Data Ingestion Dependencies "
+    }
   ],
 
   // These tasks can be run from CodeSandbox. Running one will open a log in the app.
   "tasks": {
+    {
+      "command": "cd ui && npm start",
+      "name": "Start UI"
+    },
+    {
+      "command": "cd data-ingestion && npm run dev",
+      "name": "Run data ingestion script"
+    }
   }
 }
