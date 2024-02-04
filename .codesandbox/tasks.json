@@ -13,13 +13,13 @@
 
   // These tasks can be run from CodeSandbox. Running one will open a log in the app.
   "tasks": {
-    {
-      "command": "cd ui && npm start",
-      "name": "Start UI"
+    "Start UI": {
+      "name": "Start UI server",
+      "command": "cd ui && npm start"
     },
-    {
-      "command": "cd data-ingestion && npm run dev",
-      "name": "Run data ingestion script"
+    "Start data script": {
+      "name": "Run Data Ingestion Script",
+      "command": "cd data-ingestion && npm run dev"
     }
   }
 }
