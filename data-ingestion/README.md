@@ -1,6 +1,4 @@
-# Algolia Take home Project
-
-This project is a simple implementation of Algolia's search API utilizing Typescript to ingest data from a fictional catalog service.
+# Data Ingestion Project
 
 ## Setup
 Ensure that `node` and `npm` are available on your system. This project uses Node 18, however there is nothing in this project that would prevent utilizing Node 20 instead. Run `npm install` to install all dependencies.
