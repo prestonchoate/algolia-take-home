@@ -18,11 +18,11 @@ const search = instantsearch({
   insights: true,
 });
 
-const virtualSearchBox = instantsearch.connectors.connectSearchBox(() => { });
+const virtualSearchBox = instantsearch.connectors.connectSearchBox(() => {});
 
 const labelMapping = {
-  'true': 'Yes',
-  'false': 'No'
+  true: 'Yes',
+  false: 'No',
 };
 
 search.addWidgets([
@@ -31,7 +31,7 @@ search.addWidgets([
     container: '#hits',
     templates: {
       item: (hit, { html, components }) => html`
-      <div>
+        <div>
           <img src="${hit.image}" align="left" alt="${hit.name}" />
           <div class="hit-name">
             ${components.Highlight({ hit, attribute: 'name' })}
@@ -62,46 +62,37 @@ search.addWidgets([
     searchablePlaceholder: 'Search our brands',
   }),
 
-  instantsearch.widgets.refinementList(
-    {
-      container: '#price-list',
-      attribute: 'price_range',
-      showMore: true
-    }
-  ),
+  instantsearch.widgets.refinementList({
+    container: '#price-list',
+    attribute: 'price_range',
+    showMore: true,
+  }),
 
-  instantsearch.widgets.hierarchicalMenu(
-    {
-      container: '#category-list',
-      attributes: [
-        'hierarchicalCategories.lvl0',
-        'hierarchicalCategories.lvl1',
-        'hierarchicalCategories.lvl2'
-      ],
-      showMore: true,
-    }
-  ),
+  instantsearch.widgets.hierarchicalMenu({
+    container: '#category-list',
+    attributes: [
+      'hierarchicalCategories.lvl0',
+      'hierarchicalCategories.lvl1',
+      'hierarchicalCategories.lvl2',
+    ],
+    showMore: true,
+  }),
 
-  instantsearch.widgets.ratingMenu(
-    {
-      container: '#rating-list',
-      attribute: 'rating'
-    }
-  ),
+  instantsearch.widgets.ratingMenu({
+    container: '#rating-list',
+    attribute: 'rating',
+  }),
 
-  instantsearch.widgets.refinementList(
-    {
-      container: '#free-ship-list',
-      attribute: 'free_shipping',
-      transformItems(items) {
-        return items.map(item => ({
-          ...item,
-          highlighted: item.value == 'true' ? 'Yes' : 'No',
-        }));
-      }
-
-    }
-  ),
+  instantsearch.widgets.refinementList({
+    container: '#free-ship-list',
+    attribute: 'free_shipping',
+    transformItems(items) {
+      return items.map((item) => ({
+        ...item,
+        highlighted: item.value == 'true' ? 'Yes' : 'No',
+      }));
+    },
+  }),
 ]);
 
 search.start();
@@ -121,7 +112,7 @@ const recentSearchesPlugin = createLocalStorageRecentSearchesPlugin({
 
 const querySuggestionsPlugin = createQuerySuggestionsPlugin({
   searchClient,
-  indexName: 'instant_search_demo_query_suggestions',
+  indexName: 'product_catalog_query_suggestions',
   getSearchParams() {
     return recentSearchesPlugin.data.getAlgoliaSearchParams({ hitsPerPage: 6 });
   },
