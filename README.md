@@ -4,3 +4,6 @@ This project is a simple implementation of Algolia's search API utilizing Typesc
 
 ## CodeSandbox
 A CodeSandbox environment has been created for this project and can be accessed [here](https://codesandbox.io/p/github/prestonchoate/algolia-take-home/main?file=%1Fsrc%2Findex.ts).
+
+## Architecture
+![Architecture](./Docs/Architecture.png)
